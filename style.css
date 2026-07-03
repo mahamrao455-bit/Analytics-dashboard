@@ -1,0 +1,844 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* =========================
+   RESET
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#f5f7ff;
+overflow-x:hidden;
+}
+
+/* =========================
+   ROOT COLORS
+========================= */
+
+:root{
+
+--sidebar:#0f172a;
+--sidebar-light:#1e293b;
+
+--primary:#7c3aed;
+--secondary:#4f46e5;
+
+--text:#0f172a;
+--text-light:#64748b;
+
+--card:#ffffff;
+--border:#e2e8f0;
+
+--green:#22c55e;
+--orange:#f59e0b;
+--blue:#06b6d4;
+
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.dashboard-wrapper{
+display:flex;
+min-height:100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+
+width:280px;
+
+height:100vh;
+
+position:fixed;
+
+left:0;
+top:0;
+
+background:var(--sidebar);
+
+padding:30px 25px;
+
+overflow-y:auto;
+
+}
+
+.logo-area{
+
+margin-bottom:50px;
+
+}
+
+.logo-area h2{
+
+color:white;
+
+font-size:30px;
+
+font-weight:800;
+
+}
+
+.logo-area span{
+
+color:var(--primary);
+
+}
+
+.sidebar-menu{
+
+list-style:none;
+
+padding-left:0;
+
+}
+
+.sidebar-menu li{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+padding:15px 18px;
+
+margin-bottom:12px;
+
+border-radius:14px;
+
+color:#cbd5e1;
+
+cursor:pointer;
+
+transition:.3s;
+
+font-size:15px;
+
+font-weight:500;
+
+}
+
+.sidebar-menu li:hover{
+
+background:var(--sidebar-light);
+
+color:white;
+
+}
+
+.sidebar-menu li.active{
+
+background:
+linear-gradient(
+135deg,
+var(--primary),
+var(--secondary)
+);
+
+color:white;
+
+}
+
+.sidebar-menu i{
+
+width:20px;
+
+text-align:center;
+
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content{
+
+margin-left:280px;
+
+width:100%;
+
+padding:35px;
+
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:35px;
+
+}
+
+.search-box{
+
+background:white;
+
+width:380px;
+
+padding:14px 18px;
+
+border-radius:16px;
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+box-shadow:
+0 10px 25px
+rgba(0,0,0,.05);
+
+}
+
+.search-box i{
+
+color:#94a3b8;
+
+}
+
+.search-box input{
+
+border:none;
+
+outline:none;
+
+width:100%;
+
+font-size:14px;
+
+background:transparent;
+
+}
+
+.topbar-right{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+}
+
+.upgrade-btn{
+
+border:none;
+
+padding:12px 22px;
+
+border-radius:14px;
+
+font-weight:600;
+
+color:white;
+
+background:
+linear-gradient(
+135deg,
+var(--primary),
+var(--secondary)
+);
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.upgrade-btn:hover{
+
+transform:translateY(-2px);
+
+}
+
+.notification{
+
+width:45px;
+
+height:45px;
+
+background:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+box-shadow:
+0 10px 20px
+rgba(0,0,0,.05);
+
+cursor:pointer;
+
+}
+
+.profile-img{
+
+width:48px;
+
+height:48px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+}
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.page-heading{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:30px;
+
+}
+
+.page-heading h1{
+
+font-size:34px;
+
+font-weight:800;
+
+color:var(--text);
+
+}
+
+.page-heading p{
+
+margin-top:6px;
+
+color:var(--text-light);
+
+}
+
+.export-btn{
+
+border:none;
+
+padding:12px 22px;
+
+border-radius:14px;
+
+background:white;
+
+font-weight:600;
+
+box-shadow:
+0 10px 25px
+rgba(0,0,0,.05);
+
+cursor:pointer;
+
+}
+
+/* =========================
+   KPI CARDS
+========================= */
+
+.stats-card{
+
+padding:24px;
+
+border-radius:24px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+color:white;
+
+min-height:140px;
+
+box-shadow:
+0 20px 40px rgba(0,0,0,.12);
+
+transition:.35s;
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+.stats-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.stats-card h6{
+
+font-size:14px;
+
+font-weight:500;
+
+opacity:.9;
+
+margin-bottom:12px;
+
+}
+
+.stats-card h2{
+
+font-size:32px;
+
+font-weight:800;
+
+margin-bottom:8px;
+
+}
+
+.stats-card span{
+
+font-size:13px;
+
+font-weight:600;
+
+}
+
+.stats-card i{
+
+font-size:42px;
+
+opacity:.85;
+
+}
+
+.revenue{
+background:linear-gradient(135deg,#7c3aed,#4f46e5);
+}
+
+.users{
+background:linear-gradient(135deg,#06b6d4,#2563eb);
+}
+
+.orders{
+background:linear-gradient(135deg,#f59e0b,#f97316);
+}
+
+.growth{
+background:linear-gradient(135deg,#22c55e,#16a34a);
+}
+
+/* =========================
+   CHART CARDS
+========================= */
+
+.chart-card{
+
+background:white;
+
+border-radius:26px;
+
+padding:25px;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.06);
+
+height:100%;
+
+}
+
+.card-title-area{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:25px;
+
+}
+
+.card-title-area h4{
+
+font-size:20px;
+
+font-weight:700;
+
+color:#0f172a;
+
+}
+
+.card-title-area select{
+
+padding:10px 14px;
+
+border:1px solid #e2e8f0;
+
+border-radius:10px;
+
+outline:none;
+
+}
+
+.chart-card canvas{
+
+width:100% !important;
+
+height:340px !important;
+
+}
+
+/* =========================
+   TABLE CARD
+========================= */
+
+.table-card{
+
+background:white;
+
+border-radius:26px;
+
+padding:25px;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.06);
+
+height:100%;
+
+}
+
+.table-card a{
+
+text-decoration:none;
+
+font-weight:600;
+
+color:#7c3aed;
+
+}
+
+.table th{
+
+font-size:14px;
+
+font-weight:700;
+
+color:#64748b;
+
+border:none;
+
+padding:18px 10px;
+
+}
+
+.table td{
+
+padding:18px 10px;
+
+vertical-align:middle;
+
+border-color:#edf2f7;
+
+}
+
+.status{
+
+padding:8px 14px;
+
+border-radius:30px;
+
+font-size:12px;
+
+font-weight:700;
+
+}
+
+.active-status{
+
+background:#dcfce7;
+
+color:#15803d;
+
+}
+
+.pending-status{
+
+background:#fef3c7;
+
+color:#b45309;
+
+}
+
+/* =========================
+   ACTIVITY CARD
+========================= */
+
+.activity-card{
+
+background:white;
+
+border-radius:26px;
+
+padding:25px;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.06);
+
+height:100%;
+
+}
+
+.activity-item{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+padding:16px 0;
+
+border-bottom:1px solid #eef2ff;
+
+}
+
+.activity-item:last-child{
+
+border-bottom:none;
+
+}
+
+.activity-item h6{
+
+margin:0;
+
+font-weight:700;
+
+color:#0f172a;
+
+}
+
+.activity-item p{
+
+margin:3px 0 0;
+
+font-size:13px;
+
+color:#64748b;
+
+}
+
+.activity-icon{
+
+width:50px;
+
+height:50px;
+
+border-radius:14px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:white;
+
+font-size:18px;
+
+}
+
+.purple{
+background:#7c3aed;
+}
+
+.blue{
+background:#06b6d4;
+}
+
+.green{
+background:#22c55e;
+}
+
+.orange{
+background:#f59e0b;
+}
+
+/* =========================
+   GLASS EFFECT
+========================= */
+
+.chart-card,
+.table-card,
+.activity-card{
+
+backdrop-filter:blur(10px);
+
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-track{
+background:#f1f5f9;
+}
+
+::-webkit-scrollbar-thumb{
+background:#cbd5e1;
+border-radius:20px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1200px){
+
+.search-box{
+width:280px;
+}
+
+}
+
+@media(max-width:991px){
+
+.sidebar{
+
+width:90px;
+
+padding:20px 10px;
+
+}
+
+.logo-area h2{
+
+font-size:24px;
+
+text-align:center;
+
+}
+
+.sidebar-menu span{
+
+display:none;
+
+}
+
+.main-content{
+
+margin-left:90px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.main-content{
+
+margin-left:0;
+
+padding:20px;
+
+}
+
+.sidebar{
+
+display:none;
+
+}
+
+.topbar{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:15px;
+
+}
+
+.search-box{
+
+width:100%;
+
+}
+
+.page-heading{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:15px;
+
+}
+
+.chart-card canvas{
+
+height:260px !important;
+
+}
+
+.stats-card h2{
+
+font-size:26px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.stats-card{
+
+min-height:120px;
+
+}
+
+.stats-card i{
+
+font-size:32px;
+
+}
+
+.page-heading h1{
+
+font-size:28px;
+
+}
+
+}
+
+
