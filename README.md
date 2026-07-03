@@ -6,7 +6,7 @@ This project presents dashboard statistics in a clean and user-friendly interfac
 
 ## 🚀 Live Demo
 
-(Add your GitHub Pages link here)
+https://mahamrao455-bit.github.io/Analytics-dashboard/
 
 ---
 
