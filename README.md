@@ -36,7 +36,7 @@ https://mahamrao455-bit.github.io/Analytics-dashboard/
 
 **GitHub:** https://github.com/mahamrao455-bit
 
-**LinkedIn:** (Add your profile)
+
 
 ---
 
